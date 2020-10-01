@@ -1,0 +1,20 @@
+package TestBasic;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Switchto {
+
+	public static void main(String[] args) throws InterruptedException {
+	
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\proy\\Desktop\\Chro\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.amazon.com");
+		driver.findElement(By.id("twotabsearchtextbox")).sendKeys("Camera");
+		driver.findElement(By.className("nav-input")).submit();
+		driver.findElement(By.linkText("KODAK")).click();
+		driver.navigate().to("https://edureka.co/blog");
+		driver.navigate().back();
+		Thread.sleep(4000);
+		driver.close();
